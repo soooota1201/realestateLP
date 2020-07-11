@@ -1,0 +1,14 @@
+@mixin mq($breakpoint: sp) {
+
+  @media #{map-get($breakpoints, $breakpoint)} {
+
+    @content;
+  }
+}
+
+@mixin inner {
+  width: 1180px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

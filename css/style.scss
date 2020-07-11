@@ -1,0 +1,615 @@
+@import './variables';
+@import './mixin';
+
+body {
+  font-family:
+    sans-serif;
+  box-sizing: border-box;
+  max-width: 2000px;
+  margin: 0 auto;
+  @include mq('sp') {
+    max-width: 1200px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.inner {
+  width: 1200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+// 基本テキスト
+p {
+  font-size: 27px;
+  line-height: 1.7;
+  @include mq('sp') {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.mb45 {
+  margin-bottom: 45px;
+  @include mq('sp') {
+    margin-bottom: 5%;
+  }
+}
+
+.p30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include mq('sp') {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+
+.p50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include mq('sp') {
+    padding: 10% 0;
+  }
+}
+
+.pb30 {
+  padding-bottom: 30px;
+}
+
+// 不動産投資レクチャー
+.s1-bg {
+  background-image: url(../image/s1-bg.jpg);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+}
+
+.m-title {
+  margin-right: 16%;
+  margin-left: 1%;
+  
+  @include mq('sp') {
+    transform: translateX(-7%);
+    width: 97%;
+    margin: 0 auto;
+  }
+}
+
+.s1-bt-bg {
+  background-image: url(../image/s1-bottombar-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 0 90px;
+  text-align: center;
+  @include mq('sp') {
+    padding: 6% 0 10%;
+  }
+
+  img {
+    width: 850px;
+    max-width: 100%;
+  }
+}
+
+// 共通ボタン
+.s2-text {
+  margin-bottom: 20px;
+}
+
+.s2-btn {
+  background-image: url(../image/s2-btn-bg.jpg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 70px 0px;
+  box-sizing: border-box;
+  @include mq('sp') {
+    padding: 7% 3%;
+  }
+
+
+}
+
+.s2-btn-link {
+  position: relative;
+  z-index: 1;
+  margin: 0 15px;
+  @include mq('sp') {
+    margin: 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 1em;
+    background: #60A8F0;
+    border: 1px solid #D8E7F6;
+  }
+
+  &::before {
+    animation: anime-pulse 2s ease-out infinite;
+  }
+
+  &::after {
+    animation: anime-pulse 2s ease-out 1s infinite;
+  }
+}
+
+@keyframes anime-pulse {
+  0% {
+    transform: scale(.95);
+    opacity: 1
+  }
+
+  90% {
+    opacity: .1
+  }
+
+  to {
+    transform: scale(1.2, 1.5);
+    opacity: 0
+  }
+}
+
+/* -------------------------
+        section1
+--------------------------*/
+.section1 {
+  h1 {
+    padding: 15px 0 2px;
+    @include mq('sp') {
+      width: 60%;
+      padding: 2.5% 0 2px;
+    }
+    img {
+      width: 300px;
+    }
+  }
+}
+
+/* -------------------------
+        section2
+--------------------------*/
+.section2 {
+  padding: 50px 0;
+  text-align: center;
+  @include mq('sp') {
+    padding: 8% 0;
+  }
+
+  .scroll {
+    margin-top: 60px;
+    @include mq('sp') {
+      margin-top: 8%;
+    }
+    img {
+      @include mq('sp') {
+        width: 12%;
+      }
+    }
+  }
+}
+
+/* -------------------------
+        section3
+--------------------------*/
+.section3 {
+  text-align: center;
+  .s3-bg {
+    background-image: url(../image/s3-title-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 110px 0;
+    @include mq('sp') {
+      padding: 12% 0;
+    }
+  }
+}
+
+/* -------------------------
+        section4
+--------------------------*/
+.section4 {
+  text-align: center;
+
+  .s4-title-bg {
+    background-image: url(../image/s4-machi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 110px 0;
+    @include mq('sp') {
+      padding: 12% 0;
+    }
+  }
+
+  .s4-main-bg {
+    background-image: url(../image/s4-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 300px 0 220px;
+    position: relative;
+    z-index: -1;
+    margin-top: -230px;
+    @include mq('sp') {
+      padding: 15% 0 10%;
+      margin-top: -10%;
+    }
+
+    p {
+      color: #ffffff;
+    }
+  }
+}
+
+/* -------------------------
+        section5
+--------------------------*/
+.section5 {
+  padding: 50px 0;
+
+  .s5-main-bg {
+    background-image: url(../image/s5-bg.png);
+    background-size: cover;
+    background-position: center;
+    padding: 260px 0 240px;
+    z-index: 1000;
+    position: relative;
+    margin-top: -180px;
+    @include mq('sp') {
+      padding: 150px 0 12%;
+      margin-top: -120px;
+    }
+
+    .s5-title {
+      margin-bottom: 80px;
+      @include mq('sp') {
+        margin-bottom: 10%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      color: #1e216f;
+    }
+  }
+
+  .s5-bottom-bg {
+    background-image: url(../image/s5-bg2.png);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* -------------------------
+        section6
+--------------------------*/
+.section6 {
+  background-color: #1e216f;
+  padding: 200px 0 50px;
+  position: relative;
+  z-index: -1;
+  margin-top: -210px;
+}
+
+/* -------------------------
+        section7
+--------------------------*/
+.section7 {
+  background-image: url(../image/s7-bg.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 100px 0 200px;
+  @include mq('sp') {
+    padding: 10% 0 10%;
+  }
+
+  .s7-title {
+    margin-bottom: 60px;
+    @include mq('sp') {
+      margin-bottom: 10%;
+    }
+  }
+}
+
+/* -------------------------
+        section8
+--------------------------*/
+.section8 {
+  background-image: url(../image/s8-bg.png);
+  background-size: cover;
+  background-position: bottom center;
+  padding-top: 220px;
+  margin-top: -187px;
+  position: relative;
+  z-index: -1;
+}
+
+/* -------------------------
+        section9
+--------------------------*/
+.section9 {
+  padding: 100px 0 50px;
+  @include mq('sp') {
+    padding: 10% 0;
+  }
+}
+
+/* -------------------------
+        section10
+--------------------------*/
+.section10 {
+  .s10-hero {
+    background-image: url(../image/s10-title-bg.png);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+  }
+
+  .m-title2 {
+    margin-left: 1%;
+    margin-right: 8%;
+  }
+
+  .s10-text-bg {
+    background-color: #1e216f;
+    padding: 40px 0;
+  }
+
+  .s10-texts {
+    padding-top: 10%;
+  }
+
+  p {
+    color: #1e216f;
+  }
+}
+
+/* -------------------------
+        section11
+--------------------------*/
+.section11 {
+  .s11-bg {
+    background-image: url(../image/s11-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 250px 0;
+    @include mq('sp') {
+      padding: 20% 0 15%;
+    }
+
+    .s11-block {
+      margin-bottom: 30px;
+    }
+  }
+
+  .s11-human-img {
+    position: relative;
+    z-index: 2;
+    margin-top: -160px;
+    @include mq('sp') {
+      margin-top: -10%;
+    }
+  }
+
+  .s11-text-bg {
+    background-color: #1e216f;
+    padding: 40px 0;
+    @include mq('sp') {
+      padding: 5% 0;
+    }
+  }
+}
+
+/* -------------------------
+        section12
+--------------------------*/
+.section12 {
+  padding: 90px 0;
+  background-color: #eaeef5;
+  @include mq('sp') {
+    padding: 10% 0;
+  }
+
+  .s12-top-img {
+    margin-bottom: 50px;
+    @include mq('sp') {
+      margin-bottom: 7%;
+    }
+  }
+
+  .s12-btm-img {
+    margin-top: 90px;
+    @include mq('sp') {
+      margin-top: 10%;
+    }
+  }
+
+  .s12-block {
+    background-color: #ffffff;
+    margin-bottom: 60px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    @include mq('sp') {
+      padding: 5%;
+      margin-bottom: 10%;
+    }
+
+    .s12-block-img {
+      margin-bottom: 30px;
+    }
+  }
+
+  .t-red {
+    font-size: 20px;
+    text-align: right;
+    color: red;
+    @include mq('sp') {
+      font-size: 1.5vw;
+    }
+  }
+}
+
+/* -------------------------
+        section13
+--------------------------*/
+.section13 {
+  background-image: url(../image/s13-bg.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 100px 0;
+  @include mq('sp') {
+    padding: 15% 0;
+  }
+
+  .s13-gbar {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 13px;
+    }
+  }
+
+  .s13-gbar_t {
+    position: absolute;
+    top: 0;
+  }
+  .s13-gbar_b {
+    position: absolute;
+    bottom: -3px;
+  }
+
+  .s13-texts {
+    padding: 70px 0;
+    @include mq('sp') {
+      padding: 10% 0;
+    }
+  }
+
+  p {
+    color: #ffffff;
+  }
+
+  .name {
+    padding-right: 50px;
+    box-sizing: border-box;
+    text-align: right;
+    @include mq('sp') {
+      padding-right: 5%;
+      width: 35%;
+      margin-left: auto;
+    }
+  }
+}
+
+/* -------------------------
+        section14
+--------------------------*/
+.section14 {
+  padding-top: 100px;
+  @include mq('sp') {
+    padding-top: 10%;
+  }
+
+  .s14-text {
+    padding: 40px 0;
+    background-color: #1e216f;
+    @include mq('sp') {
+      padding: 5% 0;
+    }
+  }
+}
+
+/* -------------------------
+        section15
+--------------------------*/
+.section15 {
+  padding: 100px 0;
+  background-color: #eaeef5;
+  @include mq('sp') {
+    padding: 10% 0;
+  }
+
+  .s15-block {
+    background-color: #ffffff;
+    padding: 50px;
+    @include mq('sp') {
+      padding: 5%;
+    }
+
+    .s15-h {
+      font-size: 55px;
+      @include mq('sp') {
+        font-size: 7.3vw;
+      }
+    }
+  }
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+  line-height: 1.8;
+}
